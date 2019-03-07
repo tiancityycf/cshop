@@ -3,7 +3,8 @@
   
   <image src='{{userinfo.avatar}}' class='avatar'></image>
   <view class='name'>{{userinfo.nickname}}</view>
-  <!-- <text wx:if="{{userinfo.level==0}}">[普通用户]</text> -->
+  <text wx:if="{{userinfo.is_promoter==1}}">[金牌会员]</text> 
+  <text wx:else>[普通会员]</text>
   <view class='notice'>
     <view class='iconfont '></view>
   </view>
@@ -15,7 +16,7 @@
       <view class='text' >我的积分</view>
     </view>
     <view class='amount-item' bindtap='coupons'>
-      <view class='count'>{{app.globalData.uid ? app.globalData.uid : 0}}</view>
+      <view class='count'>{{userinfo.uid}}</view>
       <view class='text' >用户ID</view>
     </view>
     <view class='amount-item' bindtap='collects'>
@@ -43,6 +44,20 @@
           <view class='text'>已发货</view>
         </navigator>
       </view>
+	  
+	   <view class='item'>
+        <navigator hover-class="none" url="/pages/address/address">
+          <view class='iconfont icon-dizhiguanli'></view>
+          <view class='text'>收货地址</view>
+        </navigator>
+      </view>
+	  
+	  <view class='item'>
+        <button open-type="contact" class='contact-but'>
+          <view class='iconfont icon-custom-service'></view>
+          <view class='text'>联系客服</view>
+        </button >
+      </view>
     </view>
   </view>
   <view class='item-box service'>
@@ -50,6 +65,14 @@
       <text>我的服务</text>
     </view>
     <view class='list-wrapper flex'>
+		
+	  <view class='item'>
+        <navigator hover-class="none" url="/pages/promotion-card/promotion-card">
+          <view class='iconfont icon-erweima1 icon-er'></view>
+          <view class='text'>推广二维码</view>
+        </navigator>
+      </view>
+	  
       <view class='item' bindtap='cut_down_the_price'>
         <navigator hover-class="none" url="/pages/mycut/mycut">
           <view class='iconfont icon-chongzhi'></view>
@@ -80,12 +103,7 @@
           <view class='text'>我的推广</view>
         </navigator>
       </view>
-      <view class='item' wx:if="{{userinfo.is_promoter || userinfo.statu==2}}">
-        <navigator hover-class="none" url="/pages/promotion-card/promotion-card">
-          <view class='iconfont icon-erweima1 icon-er'></view>
-          <view class='text'>推广二维码</view>
-        </navigator>
-      </view>
+      
 
       <view class='item' bindtap='collects'>
         <navigator hover-class="none">
