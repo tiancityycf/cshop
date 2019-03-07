@@ -42,7 +42,7 @@ Page({
     var first = that.data.first;
     var startpage = limit * first;
     wx.request({
-      url: app.globalData.url + '/routine/auth_api/get_user_order_list?uid='+app.globalData.uid,
+      url: app.globalData.url + '/routine/auth_api/get_user_order_list_new?uid='+app.globalData.uid,
       data: { type: e, search: search, first: startpage, limit: limit },
       method: 'get',
       header: header,
