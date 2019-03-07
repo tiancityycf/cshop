@@ -19,10 +19,7 @@
       <view class='count'>{{userinfo.uid}}</view>
       <view class='text' >用户ID</view>
     </view>
-    <view class='amount-item' bindtap='collects'>
-      <view class='count'>{{userinfo.like ? userinfo.like : 0}}</view>
-      <view class='text' >收藏商品</view>
-    </view>
+    
   </view>
   <view class='item-box orders'>
     <view class='title-bar flex'>
@@ -72,80 +69,46 @@
           <view class='text'>推广二维码</view>
         </navigator>
       </view>
+	 
 	  
-      <view class='item' bindtap='cut_down_the_price'>
-        <navigator hover-class="none" url="/pages/mycut/mycut">
-          <view class='iconfont icon-chongzhi'></view>
-          <view class='text'>我的砍价</view>
-        </navigator>
-      </view>
-      <view class='item' bindtap='extension' wx:if="{{userinfo.is_promoter && userinfo.statu == 1}}">
+      <view class='item' bindtap='extension' >
         <navigator hover-class="none">
           <view class='iconfont icon-wodetuiguangren'></view>
-          <view class='text'>我的推广人</view>
+          <view class='text'>我的盟友</view>
         </navigator>
       </view>
-      <view class='item' bindtap='extension' wx:elif="{{userinfo.statu == 2}}">
-        <navigator hover-class="none">
-          <view class='iconfont icon-wodetuiguangren'></view>
-          <view class='text'>我的推广人</view>
-        </navigator>
-      </view>
-      <view class='item' bindtap='myextension' wx:if="{{userinfo.is_promoter && userinfo.statu == 1}}">
+	  
+	  <view class='item' bindtap='myextension' >
         <navigator hover-class="none">
           <view class='iconfont icon-tongzhi'></view>
-          <view class='text'>我的推广</view>
-        </navigator>
-      </view>
-      <view class='item' bindtap='myextension' wx:elif="{{userinfo.statu == 2}}">
-        <navigator hover-class="none">
-          <view class='iconfont icon-tongzhi'></view>
-          <view class='text'>我的推广</view>
+          <view class='text'>我的好友</view>
         </navigator>
       </view>
       
-
+	  
+      <view class='item' bindtap='extension' >
+        <navigator hover-class="none">
+          <view class='iconfont icon-wodetuiguangren'></view>
+          <view class='text'>常见问题</view>
+        </navigator>
+      </view>
+     
       <view class='item' bindtap='collects'>
         <navigator hover-class="none">
           <view class='iconfont icon-collect'></view>
-          <view class='text'>我的收藏</view>
+          <view class='text'>我得游戏</view>
         </navigator>
       </view>
       <view class='item' bindtap='coupons'>
         <navigator hover-class="none">
           <view class='iconfont icon-youhuijuan'></view>
-          <view class='text'>优惠劵</view>
+          <view class='text'>积分提现</view>
         </navigator>
       </view>
-
-      <view class='item'>
-        <navigator hover-class="none" url="/pages/address/address">
-          <view class='iconfont icon-dizhiguanli'></view>
-          <view class='text'>地址管理</view>
-        </navigator>
-      </view>
+    
     </view>
   </view>
-  <view class='item-box orders'>
-    <view class='title-bar flex'>
-      <text>帮助中心</text>
-    </view>
-    <view class='list-wrapper flex'>
-      <!-- <view class='item'>
-        <navigator hover-class="none">
-          <view class='iconfont icon-liaotian'></view>
-          <view class='text'>聊天记录</view>
-        </navigator>
-      </view> -->
-      <view class='item'>
-        <button open-type="contact" class='contact-but'>
-          <view class='iconfont icon-custom-service'></view>
-          <view class='text'>联系客服</view>
-        </button >
-      </view>
-     
-    </view>
-  </view>
+  
 </view>
 <include src="/pages/home/home.wxml"/>
 
