@@ -37,26 +37,12 @@
         </navigator>
       </view>
       <view class='item'>
-        <navigator hover-class="none" url='/pages/orders-list/orders-list?nowstatus=3'>
+        <navigator hover-class="none" url='/pages/orders-list/orders-list?nowstatus=2'>
           <view class='item-span'  wx:if="{{orderStatusNum.noTake}}">{{orderStatusNum.noTake}}</view>
           <image src='/images/dfh.png'></image>
           <view class='text'>已发货</view>
         </navigator>
       </view>
-      <!-- <view class='item'>
-        <navigator hover-class="none" url='/pages/orders-list/orders-list?nowstatus=4'>
-          <view class='item-span' wx:if="{{orderStatusNum.noReply}}">{{orderStatusNum.noReply}}</view>
-          <image src='/images/dpj.png'></image>
-          <view class='text'>待评价</view>
-        </navigator>
-      </view>
-      <view class='item'>
-        <navigator hover-class="none" url='/pages/refund-order/refund-order'>
-        <view class='item-span' wx:if="{{orderStatusNum.noRefund}}">{{orderStatusNum.noRefund}}</view>
-          <image src='/images/dsh.png'></image>
-          <view class='text'>退款/售后</view>
-        </navigator>
-      </view> -->
     </view>
   </view>
   <view class='item-box service'>
