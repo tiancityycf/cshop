@@ -38,7 +38,7 @@ Page({
     };
     var that = this;
     var search = that.data.search;
-    var limit = 4;
+    var limit = 8;
     var first = that.data.first;
     var startpage = limit * first;
     wx.request({
