@@ -15,7 +15,7 @@
       <view class='count'>{{userinfo.integral}}</view>
       <view class='text' >我的积分</view>
     </view>
-    <view class='amount-item' bindtap='coupons'>
+    <view class='amount-item' >
       <view class='count'>{{userinfo.uid}}</view>
       <view class='text' >用户ID</view>
     </view>
@@ -70,7 +70,6 @@
         </navigator>
       </view>
 	 
-	  
       <view class='item' bindtap='extension' >
         <navigator hover-class="none">
           <view class='iconfont icon-wodetuiguangren'></view>
@@ -96,10 +95,10 @@
       <view class='item' bindtap='collects'>
         <navigator hover-class="none">
           <view class='iconfont icon-collect'></view>
-          <view class='text'>我得游戏</view>
+          <view class='text'>我的游戏</view>
         </navigator>
       </view>
-      <view class='item' bindtap='coupons'>
+      <view class='item' bindtap='cash'>
         <navigator hover-class="none">
           <view class='iconfont icon-youhuijuan'></view>
           <view class='text'>积分提现</view>

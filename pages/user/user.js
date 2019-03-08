@@ -95,6 +95,17 @@ Page({
     })
   },
    /**
+   * 生命周期函数--积分提现
+   */
+  cash:function(){
+    wx.navigateTo({
+      url: '/pages/cash/cash?uid='+app.globalData.uid,
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+  },
+   /**
    * 生命周期函数--我的收藏
    */
   collects: function () {

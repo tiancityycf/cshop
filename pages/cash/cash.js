@@ -8,6 +8,7 @@ Page({
     hiddentap: true,
     hidde: true,
     money:'',
+	integral:0,
     index:0,
     array:["请选择银行","招商银行","建设银行","农业银行"]
   },
@@ -37,12 +38,13 @@ Page({
         method: 'POST',
         success: function (res) {
           that.setData({
-            money: res.data.data.now_money
+            integral: res.data.data.integral
           })
         }
       });
   },
   getUserExtractBank:function () {
+	return ;
     var that = this;
     wx.request({
       url: app.globalData.url + '/routine/auth_api/get_user_extract_bank?uid=' + app.globalData.uid,
