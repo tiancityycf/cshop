@@ -118,7 +118,7 @@ Page({
    */
   extension:function(){
     wx.navigateTo({
-      url: '/pages/feree/feree',
+      url: '/pages/spread/spread?is_promoter=1',
       success: function (res) { },
       fail: function (res) { },
       complete: function (res) { },
@@ -129,7 +129,7 @@ Page({
    */
   myextension: function () {
     wx.navigateTo({
-      url: '/pages/extension/extension',
+      url: '/pages/spread/spread',
       success: function (res) { },
       fail: function (res) { },
       complete: function (res) { },

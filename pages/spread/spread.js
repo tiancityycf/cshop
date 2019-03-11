@@ -11,6 +11,7 @@ Page({
     code:'',
     userinfo:[],
     cont:'',
+	friends:[],
     first:0,
     limit:8,
     mainArray:[],
@@ -25,15 +26,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+	  console.log(options);
     app.setBarColor();
     app.setUserInfo();
     this.getCode();
     var header = {
       'content-type': 'application/x-www-form-urlencoded',
     };
-    this.money(header);
-    this.spread(header);
-    this.userbill(header);
+    //this.money(header);
+    this.spread(header,options.is_promoter);
+    //this.userbill(header);
   },
   money: function (header){
     var that = this;
@@ -78,16 +80,17 @@ Page({
       }
     });
   },
-  spread: function (header){
+  spread: function (header,is_promoter){
   var that = this;
   wx.request({
-    url: app.globalData.url + '/routine/auth_api/get_spread_list?uid=' + app.globalData.uid,
+    url: app.globalData.url + '/routine/auth_api/get_spread_list?uid=' + app.globalData.uid+'&is_promoter='+is_promoter,
     method: 'POST',
     header: header,
     success: function (res) {
       if (res.data.code == 200) {
       that.setData({
-        cont: res.data.data.count       
+        cont: res.data.data.count,
+		friends:res.data.data.list
       })
       }else{
         that.setData({
