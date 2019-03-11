@@ -4,7 +4,8 @@ Page({
   data: {
     url: app.globalData.urlImages,
     sum:'',
-    Arraylist:[]
+    Arraylist:[],
+	conf:[]
   },
 
   /**
@@ -21,20 +22,23 @@ Page({
       'content-type': 'application/x-www-form-urlencoded',
     }
     wx.request({
-      url: app.globalData.url + '/routine/auth_api/get_user_collect_product?uid=' + app.globalData.uid,
+      url: app.globalData.url + '/routine/auth_api/game_list?uid=' + app.globalData.uid,
       method: 'GET',
       header: header,
       success: function (res) {
         if (res.data.code==200){
+			console.log(res.data);
           that.setData({
-            sum: res.data.data.length,
-            Arraylist: res.data.data
+            sum: res.data.data.games.length,
+            Arraylist: res.data.data.games,
+			conf:res.data.data.conf
           })
         }else{
         // console.log(res);
         that.setData({
           sum: 0,
-          Arraylist: []
+          Arraylist: [],
+		  conf:res.data.conf
         })
         }
       }
@@ -46,6 +50,12 @@ Page({
   onReady: function () {
   
   },
+  game_add:function(){
+	  wx.navigateTo({ //跳转至指定页面并关闭其他打开的所有页面（这个最好用在返回至首页的的时候）
+      url: '/pages/collect_add/cash'
+    })
+  },
+  
   del:function(e){
     var that=this;
     var id = e.target.dataset.id;

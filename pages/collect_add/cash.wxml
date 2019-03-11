@@ -1,0 +1,6 @@
+    <form bindsubmit="formSubmit">
+        <view class='information' >
+            <view class='information-li flex'><label>游戏ID</label><input type='text' placeholder-class='placeholder' placeholder='游戏ID' name="game_id"/></view>
+        </view>
+      <button class='but' formType="submit">绑定</button>
+    </form>    

@@ -41,6 +41,7 @@
     "pages/unshop/unshop",
     "pages/main/main",
     "pages/collect/collect",
+	"pages/collect_add/cash",
     "pages/promotion-card/promotion-card"
   ],
   "window": {

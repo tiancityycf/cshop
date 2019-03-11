@@ -21,15 +21,9 @@ Page({
     var that = this;
     this.getUserInfo();
     this.getUserExtractBank();
-    wx.request({
-      url: app.globalData.url + '/routine/auth_api/minmoney?uid=' + app.globalData.uid,
-      method: 'POST',
-      success: function (res) {
-        that.setData({
-          minmoney: res.data.msg
+	that.setData({
+          minmoney: 100
         })
-      }
-    })
   },
   getUserInfo:function(){
       var that = this;
@@ -103,6 +97,7 @@ Page({
     var warn = "";
     var minmon = that.data.minmoney;
     var mymoney = that.data.money;
+	var integral = that.data.integral;
     var list={};
     if (that.data.hidde==true){
       list.$name = e.detail.value.name;
@@ -117,10 +112,10 @@ Page({
         warn = "请输入银行卡号";
       } else if (list.bankname == "请选择银行") {
         warn = "请选择银行";
-      } else if (list.money < minmon) {
-        warn = "请输入正确的金额"
-      } else if (list.money > mymoney) {
-        warn = "您的余额不足"
+      } else if(list.money<minmon){
+		  warn = "最小提现积分" + minmon;
+	  } else if (list.money > integral) {
+        warn = "您的积分不足";
       }else {
         flag = false;
       }
@@ -154,7 +149,7 @@ Page({
       }
     }
     wx.request({
-      url: app.globalData.url + '/routine/auth_api/user_extract?uid=' + app.globalData.uid,
+      url: app.globalData.url + '/routine/auth_api/user_integral?uid=' + app.globalData.uid,
       data: { lists: list},
       method: 'POST',
       header: header,
