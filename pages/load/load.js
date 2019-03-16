@@ -30,6 +30,7 @@ Page({
     userInfo.spid = app.globalData.spid;
     wx.login({
       success: function (res) {
+		 
         if (res.code) {
           userInfo.code = res.code;
           wx.request({
@@ -57,12 +58,37 @@ Page({
                     })
                 }
               }
-            }
+            },
+			fail:function(res){
+				wx.showModal({
+				  title: '提示',
+				  content: res.errMsg,
+				  success(res) {
+					if (res.confirm) {
+					  console.log('用户点击确定')
+					} else if (res.cancel) {
+					  console.log('用户点击取消')
+					}
+				  }
+				})
+			}
           })
         } else {
           console.log('登录失败！' + res.errMsg)
+		  wx.showToast({
+				  title: res.errMsg,
+				  icon: 'success',
+				  duration: 2000
+				});
         }
-      }
+      },
+	  fail:function(res){
+		  wx.showToast({
+				  title: "wx.login fail",
+				  icon: 'success',
+				  duration: 2000
+				});
+	  }
     })
   },
 })

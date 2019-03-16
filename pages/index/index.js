@@ -48,11 +48,11 @@ Page({
     var that = this;
     if (options.spid){
 		app.globalData.spid = options.spid
-	  	promoter_uid = options.scene;
+	  	//promoter_uid = options.scene;
     }
 	
-	if(options.scene>0){
-		promoter_uid = options.scene;
+	if(app.globalData.spid>0){
+		promoter_uid = app.globalData.spid;
 	}
 	  
     app.setUserInfo();

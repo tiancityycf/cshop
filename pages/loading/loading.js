@@ -17,8 +17,10 @@ Page({
   onLoad: function (options) {
     var that = this;
     app.setBarColor();
-    if (options.scene) app.globalData.spid = options.scene;
-    that.setSetting();
+    if (options.scene){
+		app.globalData.spid = options.scene;
+	}
+	that.setSetting();
   },
 
   setSetting: function () {
@@ -32,7 +34,13 @@ Page({
         }else{
           that.getUserInfo();
         }
-      }
+      },
+	  fail(res){
+		  
+	  },
+	  complete(res){
+		  
+	  }
     })
   },
   getUserInfo: function () {
@@ -68,20 +76,40 @@ Page({
               })
             } else {
               console.log('登录失败！' + res.errMsg)
+			  wx.showToast({
+				  title: res.errMsg,
+				  icon: 'success',
+				  duration: 2000
+				})
             }
           },
           fail: function () {
-          },
+			  wx.showToast({
+				  title: 'wx.login fail',
+				  icon: 'success',
+				  duration: 2000
+				})
+		  },
+		  complete:function(){
+			  
+		  }
         })
       },
       fail: function () {
+		  wx.showToast({
+			  title: 'getUserInfo fail',
+			  icon: 'success',
+			  duration: 2000
+			})
       },
+	  complete:function(){
+		  
+	  }
     })
   },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
   },
 })
