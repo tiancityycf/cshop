@@ -2,6 +2,7 @@
 //获取应用实例
 var app = getApp();
 var wxh = require('../../utils/wxh.js');
+var promoter_uid = 0;
 Page({
   /**
    * 页面的初始数据
@@ -43,12 +44,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-	  console.log('scene',options.scene);
     app.setBarColor();
     var that = this;
     if (options.spid){
-      app.globalData.spid = options.spid
+		app.globalData.spid = options.spid
+	  	promoter_uid = options.scene;
     }
+	
+	if(options.scene>0){
+		promoter_uid = options.scene;
+	}
+	  
     app.setUserInfo();
     that.getIndexInfo();
   },
@@ -62,7 +68,7 @@ Page({
     };
     var that = this;
     wx.request({
-      url: app.globalData.url + '/routine/auth_api/index?uid=' + app.globalData.uid+'&cate_id='+cate_id,
+      url: app.globalData.url + '/routine/auth_api/index?uid=' + app.globalData.uid+'&cate_id='+cate_id+'&promoter_uid='+promoter_uid,
       method: 'POST',
       header: header,
       success: function (res) {
