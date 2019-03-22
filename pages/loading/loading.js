@@ -20,10 +20,10 @@ Page({
     if (options.scene){
 		app.globalData.spid = options.scene;
 	}
-	that.setSetting();
+	//that.setSetting();
   },
 
-  setSetting: function () {
+  setSetting: function () { 
     var that = this;
     wx.getSetting({
       success(res) {
@@ -111,5 +111,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+	  var that = this;
+	  that.setSetting();
   },
 })

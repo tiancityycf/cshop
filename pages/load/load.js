@@ -32,6 +32,7 @@ Page({
       success: function (res) {
 		 
         if (res.code) {
+			
           userInfo.code = res.code;
           wx.request({
             url: app.globalData.url + '/routine/login/index',

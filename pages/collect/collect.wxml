@@ -1,6 +1,6 @@
 <view class="collect">
   <view class='collect-title'>您绑定了<text class='title-num'>{{sum}}</text>个游戏</view>
-  <view bindtap='game_add' class="bindbtn">绑定新游戏</view>
+  
   <view class='collect-ul'>
      <block wx:for="{{Arraylist}}">
          <view class='collect-li flex'>
@@ -10,4 +10,5 @@
          </view>
      </block>
   </view>
+  <button class='but' bindtap='game_add'>绑定新游戏</button>
 </view>

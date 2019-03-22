@@ -16,7 +16,8 @@ App({
     openPages:'',
     spid:0,
     urlImages: '',
-    url: 'http://193.112.60.174'
+    //url: 'http://193.112.60.174'
+	url: 'https://www.myee.xyz'
   },
   getRoutineStyle:function(){
     var that = this;
