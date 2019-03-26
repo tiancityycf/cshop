@@ -19,7 +19,11 @@
       <view class='count'>{{userinfo.uid}}</view>
       <view class='text' >用户ID</view>
     </view>
-    
+    <view class='amount-item' >
+      <view class='count' wx:if="{{userinfo.spread_uid}}">{{userinfo.spread.nickname}}</view>
+	  <view class='count' wx:else>暂无</view>
+      <view class='text' >邀请人</view>
+    </view>
   </view>
   <view class='item-box orders'>
     <view class='title-bar flex'>
@@ -63,6 +67,12 @@
     </view>
     <view class='list-wrapper flex'>
 		
+		<view class='item' bindtap='integral'>
+        <navigator hover-class="none">
+          <view class='iconfont icon-youhuijuan'></view>
+          <view class='text'>积分明细</view>
+        </navigator>
+      </view>
 	  <view class='item'>
         <navigator hover-class="none" url="/pages/promotion-card/promotion-card">
           <view class='iconfont icon-erweima1 icon-er'></view>
@@ -105,6 +115,29 @@
         </navigator>
       </view>
     
+    </view>
+  </view>
+  
+  <view class='item-box service'>
+    <view class='title-bar flex'>
+      <text>精品推荐</text>
+    </view>
+    <view class='list-wrapper flex'>
+		
+	  <view class='item'>
+        <navigator hover-class="none" url="" open-type="navigate" target="miniProgram" app-id="wxe91bc022c0c198cb"  path="" extra-data="">
+          <image class="jingpintuijian" src="https://ylll111.xyz/caige_mp3/2267b55dd3ffe8e7e3f84f504801ad5d.png" />
+          <view class='text'>游戏1</view>
+        </navigator>
+      </view>
+	 
+      <view class='item'  >
+        <navigator hover-class="none" url="" open-type="navigate" target="miniProgram" app-id="wxe91bc022c0c198cb" path="" extra-data="">
+          <image class="jingpintuijian"  src="https://ylll111.xyz/caige_mp3/2267b55dd3ffe8e7e3f84f504801ad5d.png" />
+          <view class='text'>游戏2</view>
+        </navigator>
+      </view>
+	  
     </view>
   </view>
   

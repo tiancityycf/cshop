@@ -9,7 +9,7 @@
 		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.94",
+	"libVersion": "2.6.4",
 	"appid": "wxb87399b65aef1b56",
 	"projectname": "shop",
 	"condition": {

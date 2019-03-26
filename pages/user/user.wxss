@@ -19,6 +19,8 @@ min-width:26rpx;height:26rpx;text-align:center;line-height:26rpx;}
 .list-wrapper .item .iconfont{font-size: 45rpx;}
 .list-wrapper .item .text{font-size: 24rpx; color:#555;margin-top:10rpx;}
 
+.jingpintuijian{width:100rpx; height:100rpx;}
+
 .orders image{width: 42rpx; height: 45rpx;}
 .orders .list-wrapper{height: 142rpx;}
 .service .list-wrapper{height:auto;padding:0rpx 0 30rpx;min-height:100rpx;}
