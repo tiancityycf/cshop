@@ -4,9 +4,12 @@
   <view class='collect-ul'>
      <block wx:for="{{Arraylist}}">
          <view class='collect-li flex'>
-            <view class='li-right'>
+            <view class='li-left'>
                {{item.game_name}}
             </view>   
+			<view class='li-right'>
+			          <image class="wodeyouxi" src="https://www.myee.xyz/images/kouhong.jpg" />
+            </view> 
          </view>
      </block>
   </view>

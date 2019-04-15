@@ -66,21 +66,21 @@
       <text>我的服务</text>
     </view>
     <view class='list-wrapper flex'>
-		
-		<view class='item' bindtap='integral'>
+	  
+	  <view class='item' bindtap='collects'>
         <navigator hover-class="none">
-          <view class='iconfont icon-youhuijuan'></view>
-          <view class='text'>积分明细</view>
+          <view class='iconfont icon-collect'></view>
+          <view class='text'>我的游戏</view>
         </navigator>
       </view>
+	  
 	  <view class='item'>
         <navigator hover-class="none" url="/pages/promotion-card/promotion-card">
           <view class='iconfont icon-erweima1 icon-er'></view>
           <view class='text'>推广二维码</view>
         </navigator>
       </view>
-	 
-      <view class='item' bindtap='extension' >
+      <view class='item' bindtap='extension' wx:if="{{userinfo.is_promoter==1}}" >
         <navigator hover-class="none">
           <view class='iconfont icon-wodetuiguangren'></view>
           <view class='text'>我的盟友</view>
@@ -89,26 +89,33 @@
 	  
 	  <view class='item' bindtap='myextension' >
         <navigator hover-class="none">
-          <view class='iconfont icon-tongzhi'></view>
+          <view class='iconfont'>
+		  <image class="img_icon" src="/icon/wodehaoyou.png" />
+		  </view>
           <view class='text'>我的好友</view>
         </navigator>
       </view>
       
 	  
-      <view class='item' bindtap='extension' >
+      <view class='item' bindtap='feree' >
         <navigator hover-class="none">
-          <view class='iconfont icon-wodetuiguangren'></view>
+          <view class='iconfont'>
+		      <image class="img_icon" src="/icon/changjianwenti.png" />
+		  </view>
           <view class='text'>常见问题</view>
         </navigator>
       </view>
      
-      <view class='item' bindtap='collects'>
+      <view class='item' bindtap='integral'>
         <navigator hover-class="none">
-          <view class='iconfont icon-collect'></view>
-          <view class='text'>我的游戏</view>
+          <view class='iconfont'>
+		  		  <image class="img_icon" src="/icon/jifenmingxi.png" />
+		  </view>
+          <view class='text'>积分明细</view>
         </navigator>
       </view>
-      <view class='item' bindtap='cash'>
+	  
+      <view class='item' bindtap='cash' wx:if="{{userinfo.is_promoter==1}}">
         <navigator hover-class="none">
           <view class='iconfont icon-youhuijuan'></view>
           <view class='text'>积分提现</view>
@@ -125,16 +132,9 @@
     <view class='list-wrapper flex'>
 		
 	  <view class='item'>
-        <navigator hover-class="none" url="" open-type="navigate" target="miniProgram" app-id="wxe91bc022c0c198cb"  path="" extra-data="">
-          <image class="jingpintuijian" src="https://ylll111.xyz/caige_mp3/2267b55dd3ffe8e7e3f84f504801ad5d.png" />
-          <view class='text'>游戏1</view>
-        </navigator>
-      </view>
-	 
-      <view class='item'  >
-        <navigator hover-class="none" url="" open-type="navigate" target="miniProgram" app-id="wxe91bc022c0c198cb" path="" extra-data="">
-          <image class="jingpintuijian"  src="https://ylll111.xyz/caige_mp3/2267b55dd3ffe8e7e3f84f504801ad5d.png" />
-          <view class='text'>游戏2</view>
+        <navigator hover-class="none" url="" open-type="navigate" target="miniProgram" app-id="wx36d249695ef0c93c"  path="" extra-data="">
+          <image class="jingpintuijian" src="https://www.myee.xyz/images/kouhong.jpg" />
+          <view class='text'>闯关打卡赢口红</view>
         </navigator>
       </view>
 	  

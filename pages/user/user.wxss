@@ -20,6 +20,7 @@ min-width:26rpx;height:26rpx;text-align:center;line-height:26rpx;}
 .list-wrapper .item .text{font-size: 24rpx; color:#555;margin-top:10rpx;}
 
 .jingpintuijian{width:100rpx; height:100rpx;}
+.img_icon{width:40rpx; height:40rpx;}
 
 .orders image{width: 42rpx; height: 45rpx;}
 .orders .list-wrapper{height: 142rpx;}
@@ -30,6 +31,7 @@ min-width:26rpx;height:26rpx;text-align:center;line-height:26rpx;}
 .icon-collect{color:#ff8920;}
 .icon-youhuijuan{color:#1dc7ad;}
 .icon-wodetuiguangren{color:#ff865c;}
+.icon-changjianwenti{color:#ff865c;}
 .icon-tongzhi{color:#20b3ff;}
 .icon-dizhiguanli{color:#43c885;}
 .icon-liaotian{color:#48c5ff;}

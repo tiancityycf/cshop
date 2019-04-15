@@ -136,14 +136,14 @@ Page({
     })
   },
    /**
-   * 生命周期函数--我的砍价
+   * 生命周期函数--常见问题
    */
-  // cut_down_the_price:function(){
-  //   wx.navigateTo({
-  //     url: '../../pages/feree/feree',
-  //     success: function (res) { },
-  //     fail: function (res) { },
-  //     complete: function (res) { },
-  //   })
-  // }
+  feree:function(){
+     wx.navigateTo({
+       url: '../../pages/feree/feree',
+       success: function (res) { },
+       fail: function (res) { },
+       complete: function (res) { },
+    })
+   }
 })

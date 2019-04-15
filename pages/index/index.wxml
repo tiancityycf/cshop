@@ -28,7 +28,7 @@
           <view class='img-box'><image src='{{url}}{{item.image}}'></image></view>
           <view class='text-info'>
             <view class='title'>{{item.store_name}}</view>
-            <view class='price'>￥{{item.price}}</view>
+            <view class='price'>{{item.price}}积分</view>
 			<view class='buy-btn' bindtap='freeBuy' data-product_id='{{item.id}}'>免费兑换</view>
           </view>
       </view>

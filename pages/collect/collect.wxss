@@ -14,4 +14,5 @@
 .del{font-size:35rpx !important;color:#CCCCCC;}
 
 .bindbtn{border:solid 1rpx;font-size:35rpx !important;color:#CCCCCC;}
-/* .on{color:#999999;} */
+.wodeyouxi{width:100rpx;height:100rpx;}
+.li-left{height:246rpx;line-height:246rpx;}
