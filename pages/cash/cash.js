@@ -22,7 +22,7 @@ Page({
     this.getUserInfo();
     this.getUserExtractBank();
 	that.setData({
-          minmoney: 100
+          minmoney: 1000
         })
   },
   getUserInfo:function(){
@@ -83,6 +83,7 @@ Page({
       })
   },
   bindPickerChange:function(e){
+	  return;
       this.setData({
         index: e.detail.value
       })
@@ -100,9 +101,9 @@ Page({
 	var integral = that.data.integral;
     var list={};
     if (that.data.hidde==true){
-      list.$name = e.detail.value.name;
+      list.name = e.detail.value.name;
       list.cardnum = e.detail.value.cardnum;
-      list.bankname = that.data.array[that.data.index];
+      //list.bankname = that.data.array[that.data.index];
       list.money = e.detail.value.money;
       list.money = Number(list.money);
       list.extract_type = 'bank';
@@ -110,8 +111,6 @@ Page({
         warn = "请填写持卡人姓名";
       } else if (list.cardnum == "") {
         warn = "请输入银行卡号";
-      } else if (list.bankname == "请选择银行") {
-        warn = "请选择银行";
       } else if(list.money<minmon){
 		  warn = "最小提现积分" + minmon;
 	  } else if (list.money > integral) {
@@ -134,9 +133,9 @@ Page({
       if (list.weixin == "") {
         warn = "请填写微信号";
       } else if (list.money < minmon) {
-        warn = "请输入正确的金额"
-      } else if (list.money > mymoney) {
-        warn = "您的余额不足"
+        warn = "最小提现积分" + minmon;
+      } else if (list.money > integral) {
+        warn = "您的积分不足"
       } else {
         flag = false;
       }
@@ -161,7 +160,10 @@ Page({
           title: res.data.msg,
           icon: 'success',
           duration: 1500
-        })
+        });
+		wx.redirectTo({ //跳转至指定页面并关闭其他打开的所有页面（这个最好用在返回至首页的的时候）
+			url: '/pages/integral-con/integral-con'
+		});
       }
     })
   }

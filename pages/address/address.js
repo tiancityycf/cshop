@@ -20,6 +20,12 @@ Page({
     }
     this.getAddress();
   },
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    this.getAddress();
+  },
   getWxAddress:function(){
     var that = this;
      wx.authorize({

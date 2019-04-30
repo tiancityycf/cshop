@@ -3,13 +3,14 @@
   
   <view class='collect-ul'>
      <block wx:for="{{Arraylist}}">
-         <view class='collect-li flex'>
-            <view class='li-left'>
+         <view class='collect-li'>
+		     <view class='li-left'>
+			    <image class="wodeyouxi" src="https://www.myee.xyz/images/kouhong.jpg" />
+			</view>   
+			<view class='li-right'>
                {{item.game_name}}
             </view>   
-			<view class='li-right'>
-			          <image class="wodeyouxi" src="https://www.myee.xyz/images/kouhong.jpg" />
-            </view> 
+			
          </view>
      </block>
   </view>

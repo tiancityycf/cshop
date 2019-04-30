@@ -141,9 +141,14 @@ Page({
                   url: '/pages/order-confirm/order-confirm?id=' + cartId + '&addressId=' + that.data.id + '&pinkId=' + pinkId + '&couponId=' + couponId
                 })
               } else {
+				  wx.navigateBack({
+		  delta: 1
+		});
+		/*
                 wx.navigateTo({ //跳转至指定页面并关闭其他打开的所有页面（这个最好用在返回至首页的的时候）
                   url: '/pages/address/address'
                 })
+				*/
               }
             },1200)
           }

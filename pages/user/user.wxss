@@ -20,7 +20,7 @@ min-width:26rpx;height:26rpx;text-align:center;line-height:26rpx;}
 .list-wrapper .item .text{font-size: 24rpx; color:#555;margin-top:10rpx;}
 
 .jingpintuijian{width:100rpx; height:100rpx;}
-.img_icon{width:40rpx; height:40rpx;}
+.img_icon{width:60rpx; height:60rpx;}
 
 .orders image{width: 42rpx; height: 45rpx;}
 .orders .list-wrapper{height: 142rpx;}

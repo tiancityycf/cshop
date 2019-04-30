@@ -10,6 +10,6 @@
          <view class='ewm'>
              <image src='{{code}}'></image>
          </view>
-         <view class='tip'>使用微信扫描二维码关注小程序</view>
+         <view class='tip'>使用微信扫描二维码进入柏特会员中心</view>
     </view>
 </view>
