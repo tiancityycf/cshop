@@ -26,7 +26,13 @@ Page({
 	category:[],
     offset: 0,
     title: "玩命加载中...",
-    hidden: false
+	product_id:0,
+	product_name:'',
+	product_price:'',
+	address:[],
+    hidden: false,
+	num: 1,
+    show: true
   },
   goUrl:function(e){
     if (e.currentTarget.dataset.url != '#'){
@@ -76,15 +82,50 @@ Page({
 		  category:res.data.data.category,
 		  cate_id:cate_id,
 		  user: res.data.data.user,
+		  address:res.data.data.address,
           likeList: res.data.data.like//猜猜喜欢
         });
       }
     })
   },
+  
+  bindPickerChange(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    
+  },
+  
+   modelbg: function () {
+        this.setData({
+            show: false
+        })
+    },
+  
+   bindMinus: function () {
+        var that = this;
+        wxh.carmin(that)
+    },
+    bindPlus: function () {
+        var that = this;
+        wxh.carjia(that);
+    },
+	setNumber:function(e){
+        var that = this;
+        var num = parseInt(e.detail.value);
+        that.setData({
+            num: num ? num : 1
+        })
+    },
    freeBuy:function(event){
+	   
+	   
 	  let product_id = 0 ;
+	  let product_name = '' ;
+	  let product_price = 0;
+
 	  if(undefined!=event){
 		  product_id = event.currentTarget.dataset.product_id;
+		  product_name = event.currentTarget.dataset.product_name;
+		  product_price = event.currentTarget.dataset.product_price;
 	  }else{
 		  return false;
 	  }
@@ -92,8 +133,49 @@ Page({
       'content-type': 'application/x-www-form-urlencoded',
     };
     var that = this;
+	
+	that.setData({
+		  num:1,
+		  product_id:product_id,
+		  product_name:product_name,
+		  product_price:product_price,
+		  show:true
+        });
+		         
+			return ;
+			
     wx.request({
       url: app.globalData.url + '/routine/auth_api/free_buy?uid=' + app.globalData.uid+'&product_id='+product_id,
+      method: 'POST',
+      header: header,
+      success: function (res) {
+		  console.log(res.data);
+		  if(res.data.data.errcode==0){
+			  wx.showToast({
+              title: '兑换成功',
+              icon: 'success',
+              duration: 1000,
+            })
+		  }else{
+			  wx.showToast({
+              title: res.data.data.errmsg,
+              duration: 1000,
+            })
+		  }
+      }
+    })
+  },
+  freeBuyConfirm:function(){
+	  let that = this;
+	  let product_id = that.data.product_id ;
+	  let num = that.data.num ;
+
+    var header = {
+      'content-type': 'application/x-www-form-urlencoded',
+    };
+	
+    wx.request({
+      url: app.globalData.url + '/routine/auth_api/free_buy?uid=' + app.globalData.uid+'&product_id='+product_id+'&num='.num,
       method: 'POST',
       header: header,
       success: function (res) {

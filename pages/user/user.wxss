@@ -20,7 +20,8 @@ min-width:26rpx;height:26rpx;text-align:center;line-height:26rpx;}
 .list-wrapper .item .text{font-size: 24rpx; color:#555;margin-top:10rpx;}
 
 .jingpintuijian{width:100rpx; height:100rpx;}
-.img_icon{width:60rpx; height:60rpx;}
+.img_icon{width:55rpx; height:55rpx;}
+.img_icon_wodehaoyou{width:50rpx; height:50rpx;}
 
 .orders image{width: 42rpx; height: 45rpx;}
 .orders .list-wrapper{height: 142rpx;}
@@ -29,8 +30,8 @@ min-width:26rpx;height:26rpx;text-align:center;line-height:26rpx;}
 .icon-wodejifen{color:#ffa800;}
 .icon-wodepintuan{color:#ff5959;}
 .icon-collect{color:#ff8920;}
-.icon-youhuijuan{color:#1dc7ad;}
-.icon-wodetuiguangren{color:#ff865c;}
+.icon-youhuijuan{color:#1dc7ad;height:60rpx;}
+.icon-wodetuiguangren{color:#ff865c;height:55rpx;}
 .icon-changjianwenti{color:#ff865c;}
 .icon-tongzhi{color:#20b3ff;}
 .icon-dizhiguanli{color:#43c885;}
